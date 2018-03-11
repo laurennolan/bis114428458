@@ -1,13 +1,15 @@
 <?php 
-	require_once("functions.php");
-	require_once("db-const.php");
-	session_start();
-	if (logged_in() == true) {
-		redirect_to("profile.php");
-	}
+require_once("functions.php");
+require_once("db-const.php");
+session_start();
+if (logged_in() == false) {
+	redirect_to("login.php");
+} else {
 ?>
+ 
 <html>
-	 <style>
+	<link href="/css/bootstrap.css" rel="stylesheet">
+		 <style>
  .navbar-inverse, .navbar
  {
      background-color: #00b3b3 !important;
@@ -79,12 +81,17 @@ body {
    background-repeat:no-repeat;
    background-size:cover;
 }
+
+#logout{
+ color:black;
+}
 </style>
  
 <head>
-	<link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+	<title>My Profile</title>
+	<script src="script.js" type="text/javascript"></script><!-- put it on user area pages -->
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
@@ -121,68 +128,65 @@ body {
 </form>
     <ul class="nav navbar-nav navbar-right">
       <li><a href='contact.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
-      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
   </nav>
-
-<!-- The HTML login form -->
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-		Username: <input type="text" name="username" /><br />
-		Password: <input type="password" name="password" /><br />
-		Remember me: <input type="checkbox" name="remember" /><br />
-
-		<input type="submit" name="submit" value="Login" />
-		<a href="forgot.php">Forgot Password?</a>
-		<a href="register.php">Register</a>
-	</form>
-	
+  <div class="col-md-2 hidden-xs">
+<img src="https://openclipart.org/download/190113/1389952697.svg" class="img-responsive img-thumbnail ">
+  </div>
 <?php
-if (isset($_POST['submit'])) {
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-	// processing remember me option and setting cookie with long expiry date
-	if (isset($_POST['remember'])) {	
-		session_set_cookie_params('604800'); //one week (value in seconds)
-		session_regenerate_id(true);
-	} 
-
-	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-	# check connection
-	if ($mysqli->connect_errno) {
-		echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
-		exit();
-	}
-
-	$sql = "SELECT * from users WHERE username LIKE '{$username}' AND password LIKE '{$password}' LIMIT 1";
-	$result = $mysqli->query($sql);
-
-	if ($result->num_rows != 1) {
-		echo "<p><b>Error:</b> Invalid username/password combination</p>";
+	if (isset($_GET['id']) && $_GET['id'] != "") {
+		$id = $_GET['id'];
 	} else {
-		// Authenticated, set session variables
-		$user = $result->fetch_array();
-		$_SESSION['user_id'] = $user['id'];
-		$_SESSION['username'] = $user['username'];
-		$_SESSION['towncity'] = $user['towncity'];
-		$_SESSION['county'] = $user['county'];
-
-		// update status to online
-		$timestamp = time();
-		$sql = "UPDATE users SET status={$timestamp} WHERE id={$_SESSION['user_id']}";
-		$result = $mysqli->query($sql);
-
-		redirect_to("profile.php?id={$_SESSION['user_id']}");
-		// do stuffs
+		$id = $_SESSION['user_id'];
 	}
+ 
+	## connect mysql server
+		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+		# check connection
+		if ($mysqli->connect_errno) {
+			echo "<p>MySQL error no {$mysqli->connect_errno} : {$mysqli->connect_error}</p>";
+			exit();
+		}
+	## query database
+		# fetch data from mysql database
+		$sql = "SELECT * FROM users WHERE id = {$id} LIMIT 1";
+ 
+		if ($result = $mysqli->query($sql)) {
+			$user = $result->fetch_array();
+		} else {
+			echo "<p>MySQL error no {$mysqli->errno} : {$mysqli->error}</p>";
+			exit();
+		}
+ 
+		if ($result->num_rows == 1) {
+			# calculating online status
+			if (time() - $user['status'] <= (5*60)) { // 300 seconds = 5 minutes timeout
+				$status = "Online";
+			} else {
+				$status = "Offline";
+			}
+ 
+			# echo the user profile data
+			echo "<p>User ID: {$user['id']}</p>";
+			echo "<p>Username: {$user['username']}</p>";
+			echo "<p>Town/City: {$user['towncity']}</p>";
+			echo "<p>County: {$user['county']}</p>";
+			echo "<p>Status: {$status}</p>";			
+		} else { // 0 = invalid user id
+			echo "<p><b>Error:</b> Invalid user ID.</p>";
+		}
 }
-
-if(isset($_GET['msg'])) {
-	echo "<p style='color:red;'>".$_GET['msg']."</p>";
+ 
+// showing the login & register or logout link
+if (logged_in() == true) {
+	echo '<a href="logout.php">Log Out</a>';
+} else {
+	echo '<a href="login.php">Login</a> | <a href="register.php">Register</a>';
 }
-?>	
+?>
 
 </body>
 </html>

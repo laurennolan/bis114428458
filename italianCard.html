@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<style>
+  /* Style The Dropdown Button */
+ .navbar-inverse, .navbar
+ {
+     background-color: #00b3b3 !important;
+     border: 0px !important;
+     color: white !important;
+      font-size: 17px;
+ }
+ .navbar-inverse li, a
+ {
+     color: white !important;
+ }
+.dropbtn {
+    background-color: #00b3b3;
+    color: white;
+    padding-top: 13px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black !important;
+    background-color: #00b3b3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover, li:hover {
+ color: black !important;   
+ text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #00b3b3;
+}
+
+body {
+   background-image: url("travelCards/flags.png");
+   background-color: #cccccc;
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+#titleEnglish{
+ font-size: 25px;
+ color: #00b3b3;   
+}
+
+#titleTravel{
+ font-size: 60px;
+ color: #00b3b3;   
+}
+
+#titleDesctiption{
+ font-size: 30px;
+ color: #00b3b3;   
+}
+
+#image{
+    height:120px;
+    width:220px;
+}
+
+#title{
+ font-size: 30px;
+ color: #00b3b3; 
+ padding-left: 50px;
+}
+
+#card {
+    padding-left:50px;
+}
+.border-box {
+    border: 1px navy; 
+    background:rgba(260, 260, 260, 0.7);
+    margin-top: 50px;
+}
+</style>
+
+<head>
+ <link href="/css/bootstrap.css" rel="stylesheet">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coeliac Disease - Eating Out Card</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Coeliac Ireland</a>
+    </div>
+    <ul class="nav navbar-nav navbar-inverse">
+      <li class=""><a href="index.php">Home</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="maps.php">Eat Out</button>
+        <div class="dropdown-content">
+            <a href="searchMap.html">Map</a>
+            <a href="rating.php">Ratings</a>
+            <a href="insertrestaurant.html">Add New Restaurant </a>
+        </div>
+      </div>
+      </li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
+        <div class="dropdown-content">
+            <a href="aboutCoeliac.html">About, Treatment & Advice</a>
+            <a href="quiz.php">Take The Symptoms Quiz</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="test.html">Tesco Products</a></li>
+      <li><a href="travelCard.html">Travel Cards</a></li>
+    </ul>
+    <form class="navbar-form navbar-left">
+</form>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
+        <div class="dropdown-content">
+            <a href="contact.html">Add a Restaurant</a>
+            <a href="contactGeneral.html">General Enquiry</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+  </nav>
+
+
+
+<div class="col-md-2"></div>
+<div  class="col-md-8 border-box" id="card" >
+<h1 id="title">Celiachia - Mangiare fuori carta</h1>
+<h4>Ho la malattia celiaca e non posso mangiare cibo o bevande contenenti glutine.</h4>
+<h4>Devo attenermi a una dieta priva di glutine. Non posso mangiare grano, orzo, avena, segale e farro.</h4>
+<h4>Il glutine è anche usato in molti alimenti trasformati.</h4>
+<p>
+   Si prega di verificare gli ingredienti per:
+    <ul style="list-style-type:disc">
+      <li>tagliatelle</li>
+      <li>Couscous</li>
+      <li>Salsa di soia</li>
+      <li>Briciole di pane</li>
+      <li>Pasta</li>
+      <li>Birre, Stouts, Lager</li>
+      <li>Lievito in polvere</li>
+      <li>Farina</li>
+      <li>Semolina</li>
+      <li>Malto</li>
+    </ul>
+</p>
+<p>
+    <h4>Non posso mangiare cibi fritti o aromatizzati con ingredienti contenenti glutine</h4>
+    <h4> per esempio. pesce e patatine fritte o sughi avariati. </h4>
+    
+</p>
+<p>
+    <h4> Assicurati che il mio cibo non entri in contatto con alimenti contenenti glutine</h4>
+    <h4> o utensili o piani di lavoro che sono stati utilizzati per preparare pasti con glutine. </h4>
+
+</p>
+<p>
+   <h3>Grazie</h3>
+</p>
+
+</div>
+<div class="col-md-2"></div>
+</body>
+</html>

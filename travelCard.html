@@ -1,5 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+  /* Style The Dropdown Button */
+ .navbar-inverse, .navbar
+ {
+     background-color: #00b3b3 !important;
+     border: 0px !important;
+     color: white !important;
+      font-size: 17px;
+ }
+ .navbar-inverse li, a
+ {
+     color: white !important;
+ }
+.dropbtn {
+    background-color: #00b3b3;
+    color: white;
+    padding-top: 13px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black !important;
+    background-color: #00b3b3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover, li:hover {
+ color: black !important;   
+ text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #00b3b3;
+}
+
+body {
+   background-image: url("img/");
+   background-color: #cccccc;
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+#titleEnglish{
+ font-size: 25px;
+ color: #00b3b3;   
+}
+
+#titleTravel{
+ font-size: 60px;
+ color: #00b3b3;   
+}
+
+#titleDesctiption{
+ font-size: 30px;
+ color: #00b3b3;   
+}
+
+#image{
+    height:120px;
+    width:220px;
+}
+</style>
+  
 <head>
   <link href="/css/bootstrap.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,69 +101,136 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Coeliac Web</a>
+      <a class="navbar-brand" href="#">Coeliac Ireland</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href='maps.html'>Map</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Coeliac Disease<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Recently diagnosed?</a></li>
-          <li><a href="#">Treatment</a></li>
-          <li><a href="#">Advice</a></li>
-        </ul>
+    <ul class="nav navbar-nav navbar-inverse">
+      <li class=""><a href="index.php">Home</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="maps.php">Restaurants</button>
+        <div class="dropdown-content">
+            <a href="maps.php">Map</a>
+            <a href="searchMap.html">Search</a></a>
+            <a href="rating.php">Ratings</a>
+            <a href="insertrestaurant.html">Add New Restaurant </a>
+        </div>
+      </div>
       </li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Recipes</a></li>
-      <li class="active"><a href="travelCard.html">Travel Cards</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
+        <div class="dropdown-content">
+            <a href="aboutCoeliac.html">About, Treatment & Advice</a>
+            <a href="quiz.php">Take The Symptoms Quiz</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="test.html">Tesco Products</a></li>
+      <li><a href="travelCard.html">Travel Cards</a></li>
     </ul>
     <form class="navbar-form navbar-left">
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search">
-    <div class="input-group-btn">
-      <button class="btn btn-default" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </div>
-  </div>
+  
 </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href='#'><span class="glyphicon glyphicon-shopping-cart"></span> My Shopping Cart</a></li>
-      <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+       <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
+        <div class="dropdown-content">
+            <a href="contact.html">Add a Restaurant</a>
+            <a href="contactGeneral.html">General Enquiry</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+  </nav>
+ 
 <div class="jumbotron text-center">
-  <h1>Travel Cards</h1>
-  <p>Show this to your server to let them know your diatry needs!</p> 
+  <h1 id="titleTravel">Travel Cards</h1>
+  <p id="titleDesctiption">Show a card to your server to let them know your diatry needs!</p> 
 </div>
   
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <h3>English</h3>
-      <a href="travelCards/englishCard.html">
-      <img class="img-responsive" src="images/eng.png" class="img-rounded" alt="English" width="200" height="200">
+      <h3 id="titleEnglish">English</h3>
+      <a href="englishCard.html">
+      <img id="image" class="img-responsive" src="images/eng.png" class="img-rounded" alt="English" width="200" height="200">
       </a>
     </div>
     <div class="col-sm-4">
-      <h3>Spanish</h3>
-      <a href="travelCards/spanishCard.html">
-      <img class="img-responsive" src="images/spanish.png" class="img-rounded" alt="English" width="200" height="200">
+      <h3 id="titleEnglish">Spanish</h3>
+      <a href="spanishCard.html">
+      <img id="image" class="img-responsive" src="images/spanish.png" class="img-rounded" alt="English" width="200" height="200">
       </a>
     </div>
     <div class="col-sm-4">
-      <h3>French</h3>        
+      <h3 id=titleEnglish>French</h3>     
+      <a href="travelCards/fr.png">
+      <img id="image" class="img-responsive" src="img/fr.png" class="img-rounded" alt="English" width="200" height="200">
+      </a>
     </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 id="titleEnglish">Portuguese</h3>
+      <a href="travelCards/englishCard.html">
+      <img id="image" class="img-responsive" src="img/portugues.png" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <h3 id="titleEnglish">Italian</h3>
+      <a href="italianCard.html">
+      <img id="image" class="img-responsive" src="img/italy.jpg" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <h3 id=titleEnglish>German</h3>     
+      <a href="travelCards/fr.png">
+      <img id="image" class="img-responsive" src="img/german.png" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+  </div>
+  
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 id="titleEnglish">Chinese</h3>
+      <a href="travelCards/englishCard.html">
+      <img id="image" class="img-responsive" src="img/chinese.png" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <h3 id="titleEnglish">Japanese</h3>
+      <a href="travelCards/spanishCard.html">
+      <img id="image" class="img-responsive" src="img/japan.png" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <h3 id=titleEnglish>Russian</h3>     
+      <a href="travelCards/fr.png">
+      <img id="image" class="img-responsive" src="img/russian.jpg" class="img-rounded" alt="English" width="200" height="200">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div>
+  
+  
+</div>
 
 </body>
 </html>

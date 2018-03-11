@@ -1,0 +1,249 @@
+<html>
+    <style>
+  /* Style The Dropdown Button */
+ .navbar-inverse, .navbar
+ {
+     background-color: #00b3b3 !important;
+     border: 0px !important;
+     color: white !important;
+      font-size: 17px;
+ }
+ .navbar-inverse li, a
+ {
+     color: white !important;
+ }
+.dropbtn {
+    background-color: #00b3b3;
+    color: white;
+    padding-top: 13px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black !important;
+    background-color: #00b3b3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover, li:hover {
+ color: black !important;   
+ text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #00b3b3;
+}
+
+body {
+   background-image: url("img/citybackground.jpg");
+   background-color: #cccccc;
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+
+#submit{
+    height: 40px;
+    width: 150px;
+    background-color: #00b3b3;
+    color: white;
+    font-size: 17px;
+    outline: none !important;
+   box-shadow: none;
+   margin-left: 20px;
+}
+
+.border-box {
+    border: 1px ; 
+    background:rgba(260, 260, 260, 0.8);
+    margin-top: 50px;
+}
+#title{
+ font-size:20px;
+ color: black; 
+
+}
+</style>
+    <head>
+        <title>Contact Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='custom.css' rel='stylesheet' type='text/css'>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+    <body>
+         <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Coeliac Ireland</a>
+    </div>
+    <ul class="nav navbar-nav navbar-inverse">
+      <li class=""><a href="index.php">Home</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="maps.php">Restaurants</button>
+        <div class="dropdown-content">
+            <a href="maps.php">Map</a>
+            <a href="searchMap.html">Search</a></a>
+            <a href="rating.php">Ratings</a>
+            <a href="insertrestaurant.html">Add New Restaurant </a>
+        </div>
+      </div>
+      </li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
+        <div class="dropdown-content">
+            <a href="aboutCoeliac.html">About, Treatment & Advice</a>
+            <a href="quiz.php">Take The Symptoms Quiz</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="test.html">Tesco Products</a></li>
+      <li><a href="travelCard.html">Travel Cards</a></li>
+    </ul>
+    <form class="navbar-form navbar-left">
+</form>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
+        <div class="dropdown-content">
+            <a href="contact.html">Add a Restaurant</a>
+            <a href="contactGeneral.html">General Enquiry</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+  </nav>
+     
+                 <div class="col-lg-8 col-lg-offset-2 border-box">
+
+                   
+                    <p id="title" class="lead">If a restaurant, bar or cafe is not on our map that serves coeliac friendly food please help us out by filling out this form!</p>
+
+                    <!-- We're going to place the form here in the next step -->
+                        <form id="contact-form" method="post" action="contact.php" role="form">
+
+    <div class="messages"></div>
+
+    <div class="controls">
+
+            <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_name">Your Name *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_lastname">Restaurant Name *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Green's Restaurant *" required="required" data-error="Lastname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            </div>
+             <div class="row">
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_phone">Address Line 1 *</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="38, Patrick Street *" required="required" data-error="Address Line 1 is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_phone">Town *</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Cork *" required="required" data-error="Town is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_phone">City *</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Cork City*" required="required" data-error="City is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" value="">Serves at least 3 wheat free meals</label>
+        </div>
+        
+            <div class="col-md-0">
+               <input id="submit" type="submit" class="btn btn-success btn-send" value="Send message">
+            </div>
+            <div class="col-md-6"></div
+            <div class="col-md-6"></div
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted"><strong>*</strong> These fields are required.</a>.</p>
+            </div>
+        </div>
+    </div>
+
+</form>
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="validator.js"></script>
+        <script src="contact.js"></script>
+    </body>
+</html>

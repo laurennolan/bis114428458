@@ -1,6 +1,4 @@
-$(document).ready(function() {
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+/*global $*/
 var Basket = {
   lineItems: [],
   getBasketTotal: function() {
@@ -89,7 +87,4 @@ function searchForProducts(searchTerm, dataReturned) {
     .fail(function() {
       alert("error");
     });
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 };
-
-});

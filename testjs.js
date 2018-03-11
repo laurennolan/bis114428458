@@ -1,6 +1,4 @@
-$(document).ready(function() {
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+/*global $*/
 var Basket = {
   lineItems: [],
   getBasketTotal: function() {
@@ -60,8 +58,12 @@ $(document).ready(function() {
 function createResultsMarkup(results) {
   var resultsMarkup = "";
   $.each(results, function(index, product) {
-    var button = "<button onclick='Basket.add(" + product.tpnb + ", " + product.price + ")'>Add to basket</button>";
-    resultsMarkup = resultsMarkup + "<li>" + product.name + " £" + product.price + button + "</li>";
+    
+    resultsMarkup = resultsMarkup + 
+    "<img src=" + product.image + ">" + "" + "</img>" +
+    "<h3>" + product.name + "</h2>" +
+    "<h4>" + product.department + "</h4>" +
+    "<h4>" + product.price + "euro" + "</h4>";
   });
 
   var markup = "<ul>" + resultsMarkup + "</ul>";
@@ -89,7 +91,4 @@ function searchForProducts(searchTerm, dataReturned) {
     .fail(function() {
       alert("error");
     });
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 };
-
-});

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-  
-  <style>
+<html>
+    <style>
   /* Style The Dropdown Button */
  .navbar-inverse, .navbar
  {
@@ -67,7 +66,7 @@
 }
 
 body {
-   background-image: url("img/citybackground.jpg");
+   background-image: url("img/quiz.png");
    background-color: #cccccc;
    background-repeat:no-repeat;
    background-size:cover;
@@ -75,7 +74,7 @@ body {
 
 #submit{
     height: 40px;
-    width: 150px;
+    width: 200px;
     background-color: #00b3b3;
     color: white;
     font-size: 17px;
@@ -84,24 +83,26 @@ body {
    margin-left: 20px;
 }
 
-.border-box {
-    border: 1px ; 
-    background:rgba(260, 260, 260, 0.8);
-    margin-top: 50px;
-}
 #title{
- font-size:30px;
- color: #00b3b3; 
- padding-left:300px;
+    font-size: 25px;
+    color: #00b3b3;
+}
+.border-box { 
+    border: 2px solid navy; 
+    background:rgba(260, 260, 260, 0.7); 
+    margin-top: 50px; 
 }
 </style>
   
     <head>
         <link href="/css/bootstrap.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body >
-        <nav class="navbar navbar-inverse">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Experiencing Coeliac Symptoms? Take Our Quiz</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Coeliac Ireland</a>
@@ -132,10 +133,10 @@ body {
       <li><a href="travelCard.html">Travel Cards</a></li>
     </ul>
     <form class="navbar-form navbar-left">
-  
+
 </form>
     <ul class="nav navbar-nav navbar-right">
-       <li>
+      <li>
       <div class="dropdown">
         <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
         <div class="dropdown-content">
@@ -149,52 +150,16 @@ body {
     </ul>
   </div>
   </nav>
-  
-  <div class="col-lg-8 col-lg-offset-2 border-box">
-      
-    <label id="title"> Coeliac Disease</label>
-    <p>Coeliac disease is a auto-immune disease causing some adults and children to react to the gluten, the protein found in wheat, barley and rye. Gluten is in bread, biscuits, cakes, pasta, beer, pizza and in many manufactured foods where gluten is contained in the ingredients such as soups, sauces, gravy, salad dressings, crisps, chocolate, sweets and ready-meals. </p>
-    
-    <p>Signs and Symptoms of coeliac disease vary from person to person and may be constant or only occur from time to time. Some people may also experience an itchy rash which can be caused by an associated condition called Dermatitis Herpetiformis. </p>
-     
-    <p> Is it coeliac diease? <a href="quiz.php">Click Here to Complete an Assesment</a></p>
-  
-  </div>
-  
-  <div class="col-lg-8 col-lg-offset-2 border-box">
-      <label id="title">Recently Diagnosed?</label>
-      <p>Just been diagnosed with coeliac disease? Living Gluten Free is the only way you can counteract the ill effects of coeliac disease. Here are some suggestions to help you start your new gluten free healthy life! </p>
-  
-    <p> Looking at all the Positives</p>
-	<ul>
-  <li>You dont have to take daily medication just yummy, healthy food!</li>
-  <li>There is lots of foods that are naturally gluten free such as meat, fruit and veg and dairy</li>
-  <li>You can wow your family and friends with your new interest in food!</li>
-  <li>You will discover new foods that you enjoy – Kale who knew!</li>
-  <li>Its a great conversation starter everyone loves talking about food!</li>
-	</ul>
-	</p>
-  </div>
- 
- <div class="col-lg-8 col-lg-offset-2 border-box">
-     <label id="title">Treatment & Advice</label>
-     <p>Currently, the only treatment for celiac disease is lifelong adherence to a strict gluten-free diet. People living gluten-free must avoid foods with wheat, rye and barley, such as bread and beer. Ingesting small amounts of gluten, like crumbs from a cutting board or toaster, can trigger small intestine damage.</p>
- 
- <h3>Undiagnosed or untreated celiac disease can lead to:
-	</h3>
-<p>
-<ul>
-<li>Long-Term Health Conditions</li>
-<li>Iron deficiency anemia</li>
-<li>Early onset osteoporosis or osteopenia</li>
-<li>Infertility and miscarriage</li>
-<li>Lactose intolerance</li>
-<li>Vitamin and mineral deficiencies</li>
-<li>Central and peripheral nervous system disorders</li>
-</ul>
- 
- </div>
- <br></br>
-    </body>
+    <div class="col-md-4"></div>   
+    <div id="page-wrap" class="col-md-4 border-box">
+        <form id="start-quiz" method="post" action="test.php">
+            <div class="overlay index">
+            <div class="quiz-overlay"></div>
+	        <h1 id="title" class="index-headline">Experiencing Coeliac Symptoms? Take Our Quiz</h1>
+                <input type="submit" id="submit" class="take-quiz-btn index-btn" value="Take The Quiz" />
+            </div>    
+        </form>
+    </div>	   
+      <div class="col-md-4"></div> 
+</body>
 </html>
-

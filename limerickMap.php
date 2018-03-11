@@ -1,10 +1,94 @@
 <!DOCTYPE html >
+ <style>
+/*global $*/
+  /* Style The Dropdown Button */
+ .navbar-inverse, .navbar
+ {
+     background-color: #00b3b3 !important;
+     border: 0px !important;
+     color: white !important;
+      font-size: 17px;
+ }
+ .navbar-inverse li, a
+ {
+     color: white !important;
+ }
+.dropbtn {
+    background-color: #00b3b3;
+    color: white;
+    padding-top: 13px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black !important;
+    background-color: #00b3b3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover, li:hover {
+ color: black !important;   
+ text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: white}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #00b3b3;
+}
+
+body {
+   background-image: url("img/");
+   background-color: #cccccc;
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+</style>
+  
+
   <head>
        <link href="/css/bootstrap.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Google Maps</title>
+     <link href="/css/bootstrap.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script> 
+    $( "#searchButton" ).click(function() {
+      $("#map").hide();
+      $("#bigmap").show();
+});
+   </script>
     <style>
    /* Code below is based on GOOGLE MAPS API https://developers.google.com/maps/documentation/javascript/mysql-to-maps*/
       #map {
@@ -20,45 +104,60 @@
   </head>
   
     <body>
-        <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Coeliac Web</a>
+      <a class="navbar-brand" href="#">Coeliac Ireland</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li class="active"><a href='maps.html'>Map</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Coeliac Disease<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Recently diagnosed?</a></li>
-          <li><a href="#">Treatment</a></li>
-          <li><a href="#">Advice</a></li>
-        </ul>
+    <ul class="nav navbar-nav navbar-inverse">
+      <li class=""><a href="index.php">Home</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="maps.php">Restaurants</button>
+        <div class="dropdown-content">
+            <a href="searchMap.html">Map</a>
+            <a href="rating.php">Ratings</a>
+            <a href="insertrestaurant.html">Add New Restaurant </a>
+            <a href="maps.html">Cork City</a>
+            <a href="dublinMap.html">Dublin City</a>
+            <a href="galwayMap.html">Galway City</a>
+            <a href="limerickMap.html">Limerick City</a>
+            <a href="belfastMap.html">Belfast City</a>
+        </div>
+      </div>
       </li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="#">Recipes</a></li>
+      <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
+        <div class="dropdown-content">
+            <a href="aboutCoeliac.html">About, Treatment & Advice</a>
+            <a href="quiz.php">Take The Symptoms Quiz</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="test.html">Tesco Products</a></li>
       <li><a href="travelCard.html">Travel Cards</a></li>
     </ul>
     <form class="navbar-form navbar-left">
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search">
-    <div class="input-group-btn">
-      <button class="btn btn-default" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </div>
-  </div>
+
 </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href='#'><span class="glyphicon glyphicon-shopping-cart"></span> My Shopping Cart</a></li>
-      <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li>
+      <div class="dropdown">
+        <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
+        <div class="dropdown-content">
+            <a href="contact.html">Add a Restaurant</a>
+            <a href="contactGeneral.html">General Enquiry</a>
+        </div>
+      </div>
+      </li>
+      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
-</nav>
+  </nav>
   
-
-
+  
     <div id="map"></div>
 
     <script>
@@ -73,8 +172,8 @@
 
         function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(51.8980, -8.4737),
-          zoom: 16
+          center: new google.maps.LatLng(52.6680,-8.6305),
+          zoom: 13
         });
         var infoWindow = new google.maps.InfoWindow;
 
@@ -119,8 +218,8 @@
                 //window.open(this.url);
                 //}
                 
-              });
-              
+              })
+             
                marker.addListener('click', function() {      
                 infoWindow.setContent(infowincontent);
                 infoWindow.open(map, marker);
@@ -156,6 +255,8 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEiawuuZPOw3mzUPURtq18HaGEeSqb1gE&callback=initMap">
     </script>
+    
+     
     
   </body>
 </html>

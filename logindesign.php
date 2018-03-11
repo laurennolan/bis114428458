@@ -74,11 +74,49 @@
 }
 
 body {
-   background-image: url("img/");
+   background-image: url("img/citybackground.jpg");
    background-color: #cccccc;
    background-repeat:no-repeat;
    background-size:cover;
 }
+#submit{
+    height: 40px;
+    width: 150px;
+    background-color: #00b3b3;
+    color: white;
+    font-size: 17px;
+    outline: none !important;
+   box-shadow: none;
+   margin-left: 20px;
+   border: none !important;
+}
+
+.border-box {
+    border: 1px ; 
+    background:rgba(260, 260, 260, 0.8);
+    margin-top: 50px;
+}
+
+#title{
+ font-size: 25px;
+ color: #00b3b3;   
+}
+#enter {
+    height: 40px;
+    width: 300px;
+    border-radius: 50px;
+    outline: none !important;
+    box-shadow: none;
+
+}
+#link
+{
+   color:aqua;
+   text-decoration: none; 
+   background-color: none;
+}
+
+
 </style>
  
 <head>
@@ -128,15 +166,18 @@ body {
   </nav>
 
 <!-- The HTML login form -->
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-		Username: <input type="text" name="username" /><br />
-		Password: <input type="password" name="password" /><br />
-		Remember me: <input type="checkbox" name="remember" /><br />
+<div class="col-lg-4 col-lg-offset-2 border-box">
+	<form  action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	    <p id="title">Enter Login Details</p>
+	<label id="">	Username: </label> <input id="enter" type="text" name="username" /><br />
+	<label id="">	Password: </label> <input id="enter" type="password" name="password" /><br />
+	<label id="">	Remember me: </label> <input type="checkbox" name="remember" /><br />
 
-		<input type="submit" name="submit" value="Login" />
+		<input id="submit" type="submit" class="btn btn-success btn-send" name="submit" value="Login" />
 		<a href="forgot.php">Forgot Password?</a>
 		<a href="register.php">Register</a>
 	</form>
+</div>
 	
 <?php
 if (isset($_POST['submit'])) {
