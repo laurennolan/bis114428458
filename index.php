@@ -73,29 +73,61 @@ body {
    background-size:cover;
 }
 
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #00b3b3;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+
+/* Add an active class to highlight the current page */
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .navbar-inverse a:not(:first-child) {display: none;}
-  .navbar-inverse a.icon {
+@media screen and (max-width: 2000px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
     float: right;
     display: block;
   }
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .navbar-inverse.responsive {position: relative;}
-  .navbar-inverse.responsive a.icon {
+@media screen and (max-width: 2000px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .navbar-inverse.responsive a {
+  .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 }
+
+
 
 </style>
   
@@ -105,54 +137,17 @@ body {
     </head>
     <body >
         
-    <nav id="myTopnav" class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Coeliac Ireland</a>
-    </div>
-    <ul id="myTopnav" class="nav navbar-nav navbar-inverse">
-      <li class=""><a href="index.php">Home</a></li>
-      <li>
-      <div class="dropdown">
-        <button class="dropbtn"><a href="phone.html">Restaurants</button>
-        <div class="dropdown-content">
-            <a href="searchMap.html">Map</a>
-            <a href="rating.php">Ratings</a>
-            <a href="favo.php">Add Favourite </a>
-            <a href="insertrestaurant.html">Add New Restaurant </a>
-        </div>
-      </div>
-      </li>
-      <li>
-      <div class="dropdown">
-        <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
-        <div class="dropdown-content">
-            <a href="phone.html">About, Treatment & Advice</a>
-            <a href="quiz.php">Take The Symptoms Quiz</a>
-        </div>
-      </div>
-      </li>
-      <li><a href="test.html">Tesco Products</a></li>
-      <li><a href="phone.html">Travel Cards</a></li>
-    </ul>
-    <form class="navbar-form navbar-left">
-</form>
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-      <div class="dropdown">
-        <button class="dropbtn"><a href='contactGeneral.html'><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></button>
-        <div class="dropdown-content">
-            <a href="contact.html">Add a Restaurant</a>
-            <a href="contactGeneral.html">General Enquiry</a>
-        </div>
-      </div>
-      </li>
-      <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-  </nav>
- 
+    <div class="topnav" id="myTopnav">
+  <a href="#" class="">Coeliac Ireland</a>
+  <a href="#" class="">Home</a>
+  <a href="searchMap.html">Restaurants</a>
+  <a href="aboutCoeliac.html">Coeliac Disease</a>
+  <a href="test.html">Tesco Products</a>
+  <a href="phone.html">Travel Cards</a>
+  
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
     </body>
     
     <script>
