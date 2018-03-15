@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-  <style>
+<html>
+    
+<style>
   /* Style The Dropdown Button */
  .navbar-inverse, .navbar
  {
@@ -67,12 +66,36 @@
 }
 
 body {
-   background-image: url("img/background.JPG");
+   background-image: url("img/");
    background-color: #cccccc;
    background-repeat:no-repeat;
    background-size:cover;
 }
 
+#title{
+ font-size: 25px;
+ color: #00b3b3;   
+}
+
+#buttonGet{
+    height: 40px;
+    width: 100px;
+    background-color: #00b3b3;
+    color: white;
+    font-size: 17px;
+    outline: none !important;
+   box-shadow: none;
+   margin-left: 20px;
+}
+
+#textSearch {
+    height: 40px;
+    width: 300px;
+    border-radius: 50px;
+    outline: none !important;
+    box-shadow: none;
+
+}
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #00b3b3;
@@ -127,17 +150,30 @@ body {
   }
 }
 
+body {
+   background-image: url("img/background.JPG");
+   background-color: #cccccc;
+   background-repeat:no-repeat;
+   background-size:cover;
+}
+.border-box {
+    border: 1px navy; 
+    background:rgba(260, 260, 260, 0.7);
+    margin-top: 50px;
+}
 
 
 </style>
-  
     <head>
+        <title>TEST</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="testjs.js"></script>
         <link href="/css/bootstrap.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body >
-        
-    <div class="topnav" id="myTopnav">
+    <body>
+     
+       <div class="topnav" id="myTopnav">
   <a href="#" class="">Coeliac Ireland</a>
   <a href="#" class="">Home</a>
   <a href="searchMap.html">Restaurants</a>
@@ -148,18 +184,17 @@ body {
   
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
+     
     </body>
-    
     <script>
     /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
     var x = document.getElementById("myTopnav");
-    if (x.className === "navbar-inverse") {
+    if (x.className === "topnav") {
         x.className += " responsive";
     } else {
-        x.className = "navbar-inverse";
+        x.className = "topnav";
     }
 }
 </script>
 </html>
-
