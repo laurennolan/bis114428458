@@ -72,6 +72,31 @@ body {
    background-repeat:no-repeat;
    background-size:cover;
 }
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .navbar-inverse a:not(:first-child) {display: none;}
+  .navbar-inverse a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .navbar-inverse.responsive {position: relative;}
+  .navbar-inverse.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar-inverse.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
 </style>
   
     <head>
@@ -79,16 +104,17 @@ body {
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body >
-        <nav class="navbar navbar-inverse">
+        
+    <nav id="myTopnav" class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Coeliac Ireland</a>
     </div>
-    <ul class="nav navbar-nav navbar-inverse">
+    <ul id="myTopnav" class="nav navbar-nav navbar-inverse">
       <li class=""><a href="index.php">Home</a></li>
       <li>
       <div class="dropdown">
-        <button class="dropbtn"><a href="maps.php">Restaurants</button>
+        <button class="dropbtn"><a href="phone.html">Restaurants</button>
         <div class="dropdown-content">
             <a href="searchMap.html">Map</a>
             <a href="rating.php">Ratings</a>
@@ -101,13 +127,13 @@ body {
       <div class="dropdown">
         <button class="dropbtn"><a href="aboutCoeliac.php">Coeliac Disease</button>
         <div class="dropdown-content">
-            <a href="aboutCoeliac.html">About, Treatment & Advice</a>
+            <a href="phone.html">About, Treatment & Advice</a>
             <a href="quiz.php">Take The Symptoms Quiz</a>
         </div>
       </div>
       </li>
       <li><a href="test.html">Tesco Products</a></li>
-      <li><a href="travelCard.html">Travel Cards</a></li>
+      <li><a href="phone.html">Travel Cards</a></li>
     </ul>
     <form class="navbar-form navbar-left">
 </form>
@@ -128,5 +154,17 @@ body {
   </nav>
  
     </body>
+    
+    <script>
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "navbar-inverse") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar-inverse";
+    }
+}
+</script>
 </html>
 

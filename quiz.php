@@ -66,7 +66,7 @@
 }
 
 body {
-   background-image: url("img/quiz.png");
+   background-image: url("img/citybackground.jpg");
    background-color: #cccccc;
    background-repeat:no-repeat;
    background-size:cover;
@@ -156,7 +156,7 @@ body {
             <div class="overlay index">
             <div class="quiz-overlay"></div>
 	        <h1 id="title" class="index-headline">Experiencing Coeliac Symptoms? Take Our Quiz</h1>
-                <input type="submit" id="submit" class="take-quiz-btn index-btn" value="Take The Quiz" />
+                <input type="submit" id="submit" class=" btn take-quiz-btn index-btn" value="Take The Quiz" />
             </div>    
         </form>
     </div>	   

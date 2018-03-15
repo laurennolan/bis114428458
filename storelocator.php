@@ -9,7 +9,7 @@ $dom = new DOMDocument("1.0");
 $node = $dom->createElement("markers");
 $parnode = $dom->appendChild($node);
 // Opens a connection to a mySQL server
-$connection=mysql_connect (localhost, $username, $password);
+$connection=mysql_connect ($servername, $username, $password);
 if (!$connection) {
   die("Not connected : " . mysql_error());
 }
