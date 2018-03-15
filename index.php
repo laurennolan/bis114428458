@@ -151,7 +151,7 @@ body {
 }
 
 body {
-   background-image: url("img/background.JPG");
+   background-image: url("img/mobile.JPG");
    background-color: #cccccc;
    background-repeat:no-repeat;
    background-size:cover;
